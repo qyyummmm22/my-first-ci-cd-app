@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First CI/CD App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My CI/CD Journey!</h1>
+    <div class="message">
+        <p>This is a simple web app.</p>
+        <p>Version: <span id="app-version">1.0</span></p>
+    </div>
+    <script>
+        // A very simple "test" for our CI pipeline
+        document.addEventListener('DOMContentLoaded', function() {
+            const versionElement = document.getElementById('app-version');
+            if (versionElement) {
+                // This is the "logic" we'll test
+                const currentVersion = parseFloat(versionElement.textContent);
+                if (currentVersion < 1.0 || isNaN(currentVersion)) {
+                    versionElement.textContent = "Error: Invalid Version";
+                    document.body.style.backgroundColor = "#ffdddd"; // Indicate a problem visually
+                } else {
+                    console.log("App loaded successfully with valid version.");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
