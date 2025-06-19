@@ -14,7 +14,7 @@ if (fs.existsSync(indexPath)) {
 
 // Simulate a "content" check (e.g., ensuring specific text is present)
 const htmlContent = fs.readFileSync(indexPath, 'utf8');
-if (htmlContent.includes('Welcome to My CI/CD JOURNEY!')) {
+if (htmlContent.includes('Welcome to My CI/CD Journey!')) {
     console.log('PASS: Found expected title in index.html.');
 } else {
     console.error('FAIL: Could not find expected title in index.html.');
